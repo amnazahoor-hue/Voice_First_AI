@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice-First AI Meeting Architect</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Voice-First AI Meeting Architect</h1>
+      <p class="subtitle">Live facilitator control room for productive meetings</p>
+
+      <div class="toolbar">
+        <input id="speakerName" type="text" placeholder="Speaker Name (e.g. Alex)" />
+        <button id="registerSpeakerBtn">Register Speaker</button>
+        <button id="startBtn">Start Listening</button>
+        <button id="stopBtn" disabled>Stop Listening</button>
+        <button id="finalizeBtn">Finalize Meeting</button>
+      </div>
+
+      <div class="grid">
+        <section class="panel">
+          <h3>Live Transcript Window</h3>
+          <div class="metric">Current Speaker: <span id="liveSpeaker">Unknown Speaker</span></div>
+          <div id="transcriptWindow" class="transcript-window"></div>
+        </section>
+
+        <section class="row">
+          <div class="panel">
+            <h3>Real-Time Vibe Meter</h3>
+            <div class="metric">Compound Sentiment: <span id="currentSentiment">0.00</span></div>
+            <canvas id="vibeMeter" height="230"></canvas>
+          </div>
+
+          <div class="panel">
+            <h3>Participation Heatmap</h3>
+            <canvas id="participationChart" height="230"></canvas>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="alertZone" class="alert-zone"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="/assets/js/speech_engine.js"></script>
+    <script src="/assets/js/facilitator.js"></script>
+  </body>
+</html>
+
